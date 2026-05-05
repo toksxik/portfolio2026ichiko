@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ichiro Portfolio</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <svg width="0" height="0" style="position: absolute">
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+        <feColorMatrix
+          in="blur"
+          mode="matrix"
+          values="
+          1 0 0 0 0
+          0 1 0 0 0
+          0 0 1 0 0
+          0 0 0 18 -7"
+          result="goo"
+        />
+        <feBlend in="SourceGraphic" in2="goo" />
+      </filter>
+    </svg>
+    <div id="custom-cursor">
+      <svg class="cursor-svg" viewBox="0 0 24 24">
+        <path
+          id="cursor-path"
+          d="M12 21s-7-4.8-7-9.5S8.2 3 12 7.2 19 3 19 11.5 12 21 12 21z"
+        />
+      </svg>
+    </div>
+
+    <div id="fx"></div>
+
+    <nav class="fixed top-0 left-0 w-full z-50">
+      <div
+        class="max-w-6xl mx-auto px-4 md:px-10 py-4 flex items-center justify-between"
+      >
+        <div class="text-white font-bold tracking-[0.2em] text-sm shrink-0">
+          ICHIRO
+        </div>
+
+        <div
+          class="hidden md:flex items-center gap-8 text-[11px] tracking-widest text-gray-500"
+        >
+          <a href="#" class="hover:text-pink-300 transition relative group">
+            Home
+            <span
+              class="absolute left-0 -bottom-1 w-0 h-[1px] bg-pink-400 transition-all group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="#about"
+            class="hover:text-pink-300 transition relative group"
+          >
+            About
+            <span
+              class="absolute left-0 -bottom-1 w-0 h-[1px] bg-pink-400 transition-all group-hover:w-full"
+            ></span>
+          </a>
+          <a href="#projects" class="hover:text-pink-300 transition relative group">
+            Work
+            <span
+              class="absolute left-0 -bottom-1 w-0 h-[1px] bg-pink-400 transition-all group-hover:w-full"
+            ></span>
+          </a>
+          <a href="#contact" class="hover:text-pink-300 transition relative group">
+            Contact
+            <span
+              class="absolute left-0 -bottom-1 w-0 h-[1px] bg-pink-400 transition-all group-hover:w-full"
+            ></span>
+          </a>
+        </div>
+
+        <div class="hidden md:block shrink-0">
+          <button class="btn-ghost-soft px-4 py-1 text-xs">Let's Talk</button>
+        </div>
+
+        <button
+          id="menuBtn"
+          class="md:hidden relative w-6 h-6 flex flex-col justify-between group shrink-0"
+        >
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
+      </div>
+
+      <div
+        class="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-400/30 to-transparent relative z-20"
+      ></div>
+
+      <div
+        id="mobileMenu"
+        class="md:hidden absolute top-full left-0 w-full px-6 pb-6 pt-4 text-sm text-gray-400 space-y-4 bg-black/80 backdrop-blur opacity-0 -translate-y-4 pointer-events-none transition-all duration-300 ease-out border-b border-pink-400/20"
+      >
+        <a href="#" class="block hover:text-pink-300 transition-colors">Home</a>
+        <a href="#about" class="block hover:text-pink-300 transition-colors"
+          >About</a
+        >
+        <a href="#projects" class="block hover:text-pink-300 transition-colors">Work</a>
+        <a href="#contact" class="block hover:text-pink-300 transition-colors"
+          >Contact</a
+        >
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="text-white z-10 text-center md:text-left mt-20 md:mt-0">
+        <div class="micro-line mx-auto md:mx-0"></div>
+        <p class="text-xs text-pink-300 mb-4 tracking-widest">CREATIVE DEV</p>
+
+        <h1 class="title">
+          <span class="glitch text-white bg-pink-500 px-2" data-text="ICHIKO"
+            >ICHIRO</span
+          ><br />
+          <span class="glitch text-pink-400" data-text="ADIVA">ADIVA</span>
+        </h1>
+
+        <p class="subtitle mt-6 mx-auto md:mx-0">
+          An ambitious student hoping to gain hands-on experience in this world.
+        </p>
+
+        <div class="mt-8 flex justify-center md:justify-start gap-4">
+          <a href="#about"><button class="btn-main">Explore</button></a>
+          <a href="#contact"><button class="btn-ghost-soft px-6 py-2 rounded-full">Contact</button></a>
+        </div>
+      </div>
+
+      <div class="z-10 w-full flex justify-center md:justify-end font-black">
+        <div class="panel font-black">
+          <p class="text-pink-300 font-black mb-4" style="    transform: skewX(-6deg);">IDENTITY</p>
+
+          <p
+            class="text-white text-3xl font-black bg-pink-400"
+            style="width: 65%"
+          >
+            ICHIRO ADIVA
+          </p>
+          <p class="text-gray-400 mt-2 font-black">Semi-Fullstack Developer</p>
+
+          <p class="text-gray-400 mt-6 max-w-xs">
+            Building thoughtful interfaces anchored in clarity and emotional
+            detail.
+          </p>
+
+          <div class="mt-6 grid grid-cols-2 gap-3 text-sm">
+            <span class="rounded-full bg-white/5 px-4 py-2">Student</span>
+            <span class="rounded-full bg-white/5 px-4 py-2">Ambitious</span>
+            <span class="rounded-full bg-white/5 px-4 py-2 col-span-2"
+              >Serving</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="about"
+      class="min-h-screen px-4 md:px-10 py-20 md:py-32 relative"
+    >
+      <div class="pointer-events-none absolute inset-0 overflow-hidden"></div>
+
+      <div class="max-w-6xl mx-auto relative z-10">
+        <div class="flex flex-col lg:flex-row gap-16 mb-28">
+          <div class="lg:w-7/12 text-white" data-aos="fade-right">
+            <p
+              class="text-[10px] tracking-[0.4em] text-pink-300 mb-6 uppercase font-bold"
+            >
+              About / Identity
+            </p>
+            <h2
+              class="text-5xl md:text-7xl font-black leading-[0.9] mb-8 w-full md:w-4/5"
+            >
+              <span class="bg-pink-500 inline-block px-3 text-white"
+                >DESIGNING</span
+              ><br />
+              <span class="text-white font-black">with Ambition</span>
+            </h2>
+            <p class="text-gray-400 text-lg leading-relaxed max-w-xl">
+              I am an ambitious student with a strong drive to gain hands-on
+              experience and continuously expand my knowledge. I primarily focus
+              on UI/UX design and game design, while also developing in LuaU for
+              Roblox projects. In addition, I am currently learning React to
+              broaden my skill set in modern web development.
+            </p>
+
+            <div class="mt-10 flex flex-wrap gap-3">
+              <span
+                class="bg-pink-500/10 text-pink-300 text-[10px] px-4 py-1.5 rounded-full border border-pink-500/20 uppercase tracking-widest"
+                >Penpot</span
+              >
+              <span
+                class="bg-pink-500/10 text-pink-300 text-[10px] px-4 py-1.5 rounded-full border border-pink-500/20 uppercase tracking-widest"
+                >React</span
+              >
+              <span
+                class="bg-pink-500/10 text-pink-300 text-[10px] px-4 py-1.5 rounded-full border border-pink-500/20 uppercase tracking-widest"
+                >Luau</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="lg:w-5/12 space-y-6"
+            data-aos="fade-left"
+            data-aos-delay="150"
+          >
+            <div
+              class="bg-black/40 border border-pink-400/20 p-8 rounded-3xl backdrop-blur-md relative overflow-hidden group"
+            >
+              <div class="absolute top-0 right-0 p-4">
+                <div
+                  class="w-2 h-2 bg-pink-500 rounded-full animate-pulse"
+                ></div>
+              </div>
+
+              <p
+                class="text-pink-300 text-[10px] tracking-widest mb-6 font-black uppercase"
+              >
+                TRUSTED BY
+              </p>
+
+              <div class="flex items-start gap-6">
+                <div
+                  class="w-20 h-20 shrink-0 bg-gray-900 border border-pink-300/10 rounded-2xl overflow-hidden flex items-center justify-center relative"
+                >
+                  <img
+                    src="src/REA3_FAVICON.png"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                  />
+                </div>
+
+                <div>
+                  <a href="https://www.rea3.studio/"
+                    ><h3
+                      class="text-white text-2xl font-bold mb-1 underline hover:scale-105 transition-transform"
+                    >
+                      ReA3 Studio
+                    </h3>
+                  </a>
+                  <p
+                    class="text-pink-400 text-xs font-black mb-4 uppercase tracking-tighter"
+                  >
+                    CO-FOUNDER & UI/UX MANAGER
+                  </p>
+                  <p class="text-gray-500 text-xs leading-relaxed">
+                    Driving UI/UX strategy and fullstack development for web and
+                    game system projects across the studio.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-black/20 border border-white/5 p-6 rounded-3xl backdrop-blur-sm"
+            >
+              <p
+                class="text-gray-500 text-[10px] tracking-widest mb-4 font-black uppercase"
+              >
+                status
+              </p>
+              <div class="grid grid-cols-2 gap-4 text-[11px]">
+                <div>
+                  <p class="text-gray-600 uppercase mb-1">Role</p>
+                  <p class="text-gray-300">Semi-Fullstack Developer</p>
+                </div>
+                <div>
+                  <p class="text-gray-600 uppercase mb-1">Focus</p>
+                  <p class="text-gray-300">Web & Game Systems</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="absolute left-0 top-1/4 w-[30%] h-[1px] bg-gradient-to-r from-pink-400/40 to-transparent"
+        ></div>
+        <div
+          class="bg-black/30 border border-pink-400/20 p-6 md:p-8 rounded-3xl backdrop-blur-md relative overflow-hidden max-w-xl mx-auto"
+        >
+          <p
+            class="text-pink-300 text-[10px] tracking-widest mb-6 font-black uppercase"
+          >
+            certifications
+          </p>
+
+          <!-- CAROUSEL WRAPPER -->
+          <div class="relative">
+            <!-- SLIDES -->
+            <div class="overflow-hidden px-4">
+              <div
+                id="certTrack"
+                class="flex gap-6 items-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+              >
+                <!-- Slide -->
+                <div class="cert-slide">
+                  <div class="card">
+                    <img src="src/cert1.jpg" />
+                  </div>
+                  <p class="cert-title">SOFTWARE DEVELOPER COURSE</p>
+                  <p class="meta">Timedoor Academy — 2025</p>
+                </div>
+
+                <div class="cert-slide">
+                  <div class="card">
+                    <img src="src/cert2.jpg" />
+                  </div>
+                  <p class="cert-title">JAVASCRIPT DEVELOPER COURSE</p>
+                  <p class="meta">Timedoor Academy — 2025</p>
+                </div>
+
+                <div class="cert-slide">
+                  <div class="card">
+                    <img src="src/cert3.jpg" />
+                  </div>
+                  <p class="cert-title">ANDROID APPS DEVELOPER COURSE</p>
+                  <p class="meta">Timedoor Academy — 2026</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- CONTROLS -->
+            <div class="flex items-center justify-between mt-6 px-2">
+              <button
+                id="certPrev"
+                class="btn-ghost-soft px-3 py-1 text-xs rounded-full opacity-70 hover:opacity-100"
+              >
+                ←
+              </button>
+
+              <div id="certDots" class="flex gap-2 items-center">
+                <span
+                  class="w-6 h-[2px] bg-pink-400 rounded-full transition-all"
+                ></span>
+                <span
+                  class="w-2 h-2 rounded-full bg-white/20 transition-all"
+                ></span>
+                <span
+                  class="w-2 h-2 rounded-full bg-white/20 transition-all"
+                ></span>
+              </div>
+
+              <button
+                id="certNext"
+                class="btn-ghost-soft px-3 py-1 text-xs rounded-full"
+              >
+                →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-12 pt-16 border-t border-white/5">
+          <div class="group">
+            <p
+              class="text-pink-400 font-black text-xs mb-4 opacity-50 group-hover:opacity-100 transition-opacity"
+            >
+              01.
+            </p>
+            <h4 class="text-white font-black mb-3 tracking-tight">STRUCTURE</h4>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Everything starts with rhythm and hierarchy. If the foundation is
+              weak, styling is just noise.
+            </p>
+          </div>
+          <div class="group">
+            <p
+              class="text-pink-400 font-black text-xs mb-4 opacity-50 group-hover:opacity-100 transition-opacity"
+            >
+              02.
+            </p>
+            <h4 class="text-white font-black mb-3 tracking-tight">STYLE</h4>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Visual glow and motion aren't just decorations, they are the interface's
+              emotional vocabulary.
+            </p>
+          </div>
+          <div class="group">
+            <p
+              class="text-pink-400 font-black text-xs mb-4 opacity-50 group-hover:opacity-100 transition-opacity"
+            >
+              03.
+            </p>
+            <h4 class="text-white font-black mb-3 tracking-tight">INTENT</h4>
+            <p class="text-gray-500 text-sm leading-relaxed">
+               If it has no purpose, it doesn't belong. Intent defines what stays and what goes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="px-4 md:px-10 py-20 border-t border-pink-400/10">
+      <div class="max-w-6xl mx-auto">
+        <!-- HEADER -->
+        <div class="mb-16">
+          <p class="text-[10px] tracking-[0.3em] text-pink-300 mb-4">
+            SELECTED WORK
+          </p>
+          <h2
+            class="text-5xl md:text-7xl font-black leading-[0.9] mb-8 w-full md:w-4/5"
+          >
+            <span class="bg-pink-500 inline-block px-3 text-white"
+              >THINGS I'VE</span
+            ><br />
+            <span class="text-white font-black">actually worked on</span>
+          </h2>
+        </div>
+
+        <!-- FEATURED PROJECT -->
+        <div class="grid md:grid-cols-2 gap-10 items-center mb-20">
+          <!-- IMAGE -->
+          <div class="group relative">
+            <div
+              class="overflow-hidden rounded-2xl border border-pink-300/20 bg-black"
+            >
+              <img
+                src="src/veritass.png"
+                class="w-full h-[300px] object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+              />
+            </div>
+
+            <!-- glow layer -->
+            <div
+              class="absolute inset-0 rounded-2xl bg-pink-500/10 opacity-0 group-hover:opacity-100 blur-xl transition"
+            ></div>
+          </div>
+
+          <!-- TEXT -->
+          <div>
+            <p class="text-xs text-pink-300 tracking-widest mb-3">
+              FEATURED — 01
+            </p>
+
+            <h3 class="text-3xl font-bold text-white mb-4">VERITAS</h3>
+
+            <p class="text-gray-400 mb-6">
+              A discord bot that lets you make anonymous confessions as well as
+              multiple other fun commands for you to try out with your friends.
+            </p>
+
+            <div class="flex gap-4">
+              <a
+                href="https://discord.com/oauth2/authorize?client_id=1492558366101213418&permissions=8&integration_type=0&scope=bot+applications.commands"
+                ><button class="btn-main">View Project</button></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- GRID PROJECTS -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- CARD -->
+          <div class="work-card">
+            <img src="your-image.jpg" />
+            <div class="p-5">
+              <p class="meta">02</p>
+              <h4>Portfolio System</h4>
+              <p>A modular personal site exploring soft brutalism.</p>
+            </div>
+          </div>
+
+          <div class="work-card">
+            <img src="your-image.jpg" />
+            <div class="p-5">
+              <p class="meta">03</p>
+              <h4>Roblox Roleplay Game</h4>
+              <p>Social-first magic academy system.</p>
+            </div>
+          </div>
+
+          <div class="work-card">
+            <img src="your-image.jpg" />
+            <div class="p-5">
+              <p class="meta">04</p>
+              <h4>UI Component Library</h4>
+              <p>Reusable components with scalable layout rules.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+
+    <section
+      id="contact"
+      class="px-4 md:px-10 py-20 md:py-32 border-t border-pink-400/10 relative"
+    >
+      <div
+        class="absolute right-0 bottom-0 w-[300px] h-[300px] bg-pink-500/5 blur-[120px] pointer-events-none"
+      ></div>
+
+      <div class="max-w-6xl mx-auto relative z-10">
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+          <div>
+            <p
+              class="text-[10px] tracking-[0.3em] text-pink-300 font-black mb-4"
+            >
+              GET IN TOUCH
+            </p>
+            <h2
+              class="text-4xl md:text-6xl font-black text-white leading-[0.95] mb-8"
+            >
+              Ready to<br />
+              <span class="text-pink-400">collaborate?</span>
+            </h2>
+
+            <p class="text-gray-400 max-w-sm mb-10">
+              Whether it's a new project, a technical question, or just to say hi or even ask me to play
+              games, my inbox is always open c:
+            </p>
+
+            <div class="space-y-6">
+              <div>
+                <p
+                  class="text-[10px] tracking-widest text-gray-500 uppercase mb-1"
+                >
+                  Email
+                </p>
+                <a
+                  href="mailto:ichiko@rea3.studio"
+                  class="text-pink-200 hover:text-pink-400 transition-colors"
+                  >ichiko@rea3.studio</a
+                >
+              </div>
+              <div>
+                <p
+                  class="text-[10px] tracking-widest text-gray-500 uppercase mb-1"
+                >
+                  Socials
+                </p>
+                <div class="flex gap-4">
+                  <a
+                    href="https://www.linkedin.com/in/ichiro-adiva-ghalia-64077a250/"
+                    class="text-sm text-gray-400 hover:text-pink-300 transition-colors"
+                    >LinkedIn</a
+                  >
+                  <a
+                    href="https://github.com/toksxik"
+                    class="text-sm text-gray-400 hover:text-pink-300 transition-colors"
+                    >GitHub</a
+                  >
+                  <a
+                    href="https://x.com/kahgraa"
+                    class="text-sm text-gray-400 hover:text-pink-300 transition-colors"
+                    >Twitter</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel !max-w-full">
+            <p class="text-pink-300 text-xs font-black tracking-widest mb-6">
+              SEND A MESSAGE
+            </p>
+
+            <form
+              action="https://formspree.io/f/mlgzezeb"
+              method="POST"
+              class="space-y-4"
+            >
+              <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-1">
+                  <label class="text-[10px] text-gray-500 uppercase ml-1"
+                    >Name</label
+                  >
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                    class="w-full bg-black/40 border border-pink-300/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-pink-400/40 transition-colors"
+                  />
+                </div>
+
+                <div class="space-y-1">
+                  <label class="text-[10px] text-gray-500 uppercase ml-1"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="email@example.com"
+                    required
+                    class="w-full bg-black/40 border border-pink-300/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-pink-400/40 transition-colors"
+                  />
+                </div>
+              </div>
+
+              <div class="space-y-1">
+                <label class="text-[10px] text-gray-500 uppercase ml-1"
+                  >Subject</label
+                >
+                <select
+                  name="subject"
+                  class="w-full bg-black/40 border border-pink-300/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-pink-400/40 transition-colors appearance-none"
+                >
+                  <option>General Inquiry</option>
+                  <option>Project Proposal</option>
+                  <option>Collaboration</option>
+                </select>
+              </div>
+
+              <div class="space-y-1">
+                <label class="text-[10px] text-gray-500 uppercase ml-1"
+                  >Message</label
+                >
+                <textarea
+                  name="message"
+                  placeholder="How can I help?"
+                  rows="4"
+                  required
+                  class="w-full bg-black/40 border border-pink-300/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-pink-400/40 transition-colors resize-none"
+                ></textarea>
+              </div>
+
+              <!-- Optional: better email subject formatting -->
+              <input
+                type="hidden"
+                name="_subject"
+                value="New message from portfolio ✨"
+              />
+
+              <button
+                type="submit"
+                class="btn-main w-full py-4 font-bold tracking-widest uppercase text-xs mt-2"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="px-4 md:px-10 py-10 border-t border-pink-400/5 text-center">
+      <p class="text-[10px] tracking-[0.4em] text-gray-600 uppercase">
+        © 2026 ICHIRO ADIVA
+      </p>
+    </footer>
+    <div
+      id="toast"
+      class="fixed bottom-6 right-6 z-[9999] opacity-0 translate-y-6 pointer-events-none transition-all duration-500"
+    >
+      <div
+        class="relative px-6 py-4 rounded-2xl border border-pink-400/20 bg-black/60 backdrop-blur-xl overflow-hidden"
+      >
+        <!-- glow layer -->
+        <div
+          class="absolute inset-0 bg-pink-500/10 blur-xl opacity-0 transition duration-500"
+          id="toastGlow"
+        ></div>
+
+        <!-- content -->
+        <div class="relative flex items-center gap-3">
+          <div class="w-2 h-2 bg-pink-400 rounded-full animate-pulse"></div>
+          <p class="text-sm text-pink-200 font-black tracking-wide">
+            Message sent ✨
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
